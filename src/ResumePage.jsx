@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { playSelectSound } from "./utils/audio.js";
 import { useNavigate } from "react-router-dom";
-import mainImage from "./assets/main1.jpeg";
 
 const ITEMS = [
   { id: "i", badge: "1", title: "EXPERIENCE", subtitle: "ACCENTURE/INTERN", rank: 2 },
@@ -69,36 +68,7 @@ export default function ResumePage() {
 
   return (
     <div id="menu-screen">
-      <div className="resume-entry-mask" aria-hidden="true">
-        <img className="resume-entry-video" src={mainImage} alt="Resume background"/>
-
-      </div>
       <style>{`
-        .resume-entry-mask {
-          position: absolute;
-          inset: 0;
-          z-index: 9;
-          overflow: hidden;
-          background: #732424;
-          clip-path: circle(0 at 50% 50%);
-          animation: resume-entry-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-          pointer-events: none;
-        }
-
-        .resume-entry-video {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          background: #000;
-        }
-
-        @keyframes resume-entry-reveal {
-          from { clip-path: circle(0 at 50% 50%); }
-          to { clip-path: circle(150vmax at 50% 50%); }
-        }
-
         .resume-overlay {
           position: absolute;
           inset: 0;

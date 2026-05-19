@@ -8,6 +8,10 @@ import Socials from './Socials'
 import AboutMe from './AboutMe'
 import SideProjectsPage from './SideProjectsPage'
 import mainImage from './assets/main1.jpeg'
+import aboutBg from './assets/about-bg.jpeg'
+import resumeBg from './assets/resume-bg.jpeg'
+import socialsBg from './assets/socials-bg.jpeg'
+import sideprojBg from './assets/sideproj-bg.jpeg'
 import './App.css'
 
 const BGM_STATE_KEY = 'p5-bgm-enabled'
@@ -171,7 +175,7 @@ function BackgroundMusic() {
   )
 }
 
-function MenuScreen() {
+function MenuScreen({ onBackgroundChange }) {
   const navigate = useNavigate()
 
   const handleNavigate = (page) => {
@@ -179,6 +183,7 @@ function MenuScreen() {
       window.open('https://github.com/shuu-pao', '_blank', 'noopener,noreferrer')
       return
     }
+    onBackgroundChange?.(page)
     navigate(`/${page}`)
   }
 
@@ -190,24 +195,24 @@ function MenuScreen() {
   )
 }
 
-function SiteBackgroundImage() {
+function SiteBackgroundImage({ src }) {
   return (
     <img
       className="site-bg-image"
-      src={mainImage}
+      src={src}
       alt="Background"
       aria-hidden="true"
     />
   )
 }
 
-function AnimatedRoutes() {
+function AnimatedRoutes({ onBackgroundChange }) {
   const location = useLocation()
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={
-          <PageTransition><MenuScreen /></PageTransition>
+          <PageTransition><MenuScreen onBackgroundChange={onBackgroundChange}/></PageTransition>
         } />
         <Route path="/about" element={
           <PageTransition variant="about"><AboutMe /></PageTransition>
@@ -227,11 +232,30 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
+  const location = useLocation()
+  const [bgSrc, setBgSrc] = useState(mainImage)
+
+  const backgroundImages = {
+    about: aboutBg,
+    resume: resumeBg,
+    socials: socialsBg,
+    sideproj: sideprojBg,
+  }
+
+  useEffect(() => {
+    const pathKey = location.pathname.replace(/^\//, '')
+    setBgSrc(backgroundImages[pathKey] ?? mainImage)
+  }, [location.pathname])
+
+  const handleBackgroundChange = (page) => {
+    setBgSrc(backgroundImages[page] ?? mainImage)
+  }
+
   return (
     <>
-      <SiteBackgroundImage />
+      <SiteBackgroundImage src={bgSrc} />
       <div className="site-content-layer">
-        <AnimatedRoutes />
+        <AnimatedRoutes onBackgroundChange={handleBackgroundChange}/>
       </div>
       <BackgroundMusic />
     </>
