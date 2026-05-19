@@ -21,18 +21,19 @@ const PROJECTS_ROWS = [
 ];
 
 const SKILLS_ROWS = [
-  { index: "01", title: "REACT", level: "AMATEUR" },
-  { index: "02", title: "JAVASCRIPT", level: "AMATEUR" },
-  { index: "03", title: "CSS", level: "AMATEUR" },
-  { index: "04", title: "HTML", level: "AMATEUR" },
-  { index: "05", title: "FIREBASE", level: "AMATEUR" },
-  { index: "06", title: "SALESFORCE", level: "PROFICIENT" },
+  { index: "01", title: "SALESFORCE", level: "PROFICIENT" },
+  { index: "02", title: "REACT", level: "AMATEUR" },
+  { index: "03", title: "JAVASCRIPT", level: "AMATEUR" },
+  { index: "04", title: "CSS", level: "AMATEUR" },
+  { index: "05", title: "HTML", level: "AMATEUR" },
+  { index: "06", title: "FIREBASE", level: "AMATEUR" },
+  { index: "07", title: "KOTLIN", level: "COMPETENT" },
 ];
 
 const CERTIFICATES_ROWS = [
-  { index: "01", title: "UNDERSTANDING THE INTERNET", link: "link", url: "https://www.futurelearn.com/certificates/irb42f3" },
-  { index: "02", title: "INTRODUCTION TO ANDROID STUDIO COURSE", link: "link", url: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIyMzEyIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvNzg5ODM2MV84MjE1NjEyMTczOTQwMDIwNjMxOS5wbmciLCJ1c2VybmFtZSI6IlBhb2xvIEphbnNlbiBBLiBFbnJlcmEifQ%3D%3D&referrer=https%3A%2F%2Flms.simplilearn.com%2Fdashboard%2Fcertificate&%24web_only=true" },
-  { index: "03", title: "GETTING STARTED WITH MACHINE LEARNING ALGORITHMS", link: "link", url: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzUxIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvNzg5ODU0N184MjE1NjEyMTczOTUwMTI0NzQ2MC5wbmciLCJ1c2VybmFtZSI6IlBhb2xvIEphbnNlbiBBLiBFbnJlcmEifQ%3D%3D&referrer=https%3A%2F%2Flms.simplilearn.com%2Fdashboard%2Fcertificate&%24web_only=true" },
+  { index: "01", title: "UNDERSTANDING THE INTERNET", link: "link button", url: "https://www.futurelearn.com/certificates/irb42f3" },
+  { index: "02", title: "INTRODUCTION TO ANDROID STUDIO COURSE", link: "link button", url: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIyMzEyIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvNzg5ODM2MV84MjE1NjEyMTczOTQwMDIwNjMxOS5wbmciLCJ1c2VybmFtZSI6IlBhb2xvIEphbnNlbiBBLiBFbnJlcmEifQ%3D%3D&referrer=https%3A%2F%2Flms.simplilearn.com%2Fdashboard%2Fcertificate&%24web_only=true" },
+  { index: "03", title: "GETTING STARTED WITH MACHINE LEARNING ALGORITHMS", link: "link button", url: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzUxIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvNzg5ODU0N184MjE1NjEyMTczOTUwMTI0NzQ2MC5wbmciLCJ1c2VybmFtZSI6IlBhb2xvIEphbnNlbiBBLiBFbnJlcmEifQ%3D%3D&referrer=https%3A%2F%2Flms.simplilearn.com%2Fdashboard%2Fcertificate&%24web_only=true" },
 ];
 
 export default function ResumePage() {
@@ -102,7 +103,7 @@ export default function ResumePage() {
           position: absolute;
           inset: 0;
           z-index: 10;
-          pointer-events: none;
+          pointer-events: all;
         }
 
         .resume-stack {
@@ -539,7 +540,13 @@ export default function ResumePage() {
                 <div className="resume-detail-row" key={row.index}>
                   <div className="resume-detail-row-index">{row.index}</div>
                   <div className="resume-detail-row-title">{row.title}</div>
-                  <div className="resume-detail-link">{row.link}</div>
+                  <button
+                    className="resume-detail-link"
+                    type="button"
+                    onClick={() => window.open(row.url, "_blank", "noopener,noreferrer")}
+                  >
+                    {row.link}
+                  </button>
                 </div>
               ))}
             </div>

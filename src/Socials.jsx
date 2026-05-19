@@ -250,7 +250,7 @@ export default function Socials() {
           width: 32px;
           text-align: center;
           flex-shrink: 0;
-          color: rgba(255,255,255,0.15);
+          color: rgb(255, 255, 255);
           transition: color 0.2s ease;
           user-select: none;
         }
