@@ -4,17 +4,14 @@ import { useNavigate } from "react-router-dom";
 import mainImage from "./assets/main1.jpeg";
 
 const ITEMS = [
-  { id: "i", badge: "I", title: "EDUCATION", subtitle: "IFPB Itaporanga / IT Technician", rank: 3 },
-  { id: "ii", badge: "II", title: "SKILLS", subtitle: "Java / JavaScript / Logic", rank: 4 },
-  { id: "iii", badge: "III", title: "PROJECTS", subtitle: "Sales Mgmt / Calc / JS Exercises", rank: 4 },
-  { id: "iv", badge: "IV", title: "FOCUS", subtitle: "Backend / Frontend", rank: 5 },
+  { id: "i", badge: "I", title: "EDUCATION", subtitle: "University of San Carlos / Computer Engineering", rank: 10 },
+  { id: "ii", badge: "II", title: "SKILLS", subtitle: "React / JavaScript / CSS / HTML / Firebase", rank: 1 },
+  { id: "iii", badge: "III", title: "PROJECTS", subtitle: "Persona5 Theme / React Apps / Firebase Hosting", rank: 1 },
+  { id: "iv", badge: "IV", title: "FOCUS", subtitle: "Frontend Development / Deployment Workflow", rank: 1 },
 ];
 
 const EDUCATION_ROWS = [
-  { index: "01", title: "IFPB Campus Itaporanga", status: "3rd Yr" },
-  { index: "02", title: "IT Technician", status: "Active" },
-  { index: "03", title: "Java + JavaScript", status: "Learning" },
-  { index: "04", title: "Backend Practice", status: "Daily" },
+  { index: "01", title: "University of San Carlos", status: "Completed" },
 ];
 
 export default function ResumePage() {
