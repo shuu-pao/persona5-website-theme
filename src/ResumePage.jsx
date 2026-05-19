@@ -4,14 +4,35 @@ import { useNavigate } from "react-router-dom";
 import mainImage from "./assets/main1.jpeg";
 
 const ITEMS = [
-  { id: "i", badge: "1", title: "EDUCATION", subtitle: "University of San Carlos / Computer Engineering", rank: 10 },
-  { id: "ii", badge: "2", title: "SKILLS", subtitle: "React / JavaScript / CSS / HTML / Firebase", rank: 1 },
-  { id: "iii", badge: "3", title: "PROJECTS", subtitle: "Persona5 Theme / React Apps / Firebase Hosting", rank: 1 },
-  { id: "iv", badge: "4", title: "FOCUS", subtitle: "Frontend Development / Deployment Workflow", rank: 1 },
+  { id: "i", badge: "1", title: "EXPERIENCE", subtitle: "ACCENTURE/INTERN", rank: 2 },
+  { id: "ii", badge: "2", title: "PROJECTS", subtitle: "Persona5 Theme", rank: 3 },
+  { id: "iii", badge: "3", title: "SKILLS", subtitle: "React / JavaScript / CSS / HTML / Firebase", rank: 3 },
+  { id: "iv", badge: "4", title: "CERTIFICATES", subtitle: "Frontend Development / Deployment Workflow", rank: 2 },
 ];
 
-const EDUCATION_ROWS = [
-  { index: "01", title: "University of San Carlos", status: "Completed" },
+const EXPERIENCE_ROWS = [
+  { index: "01", title: "ACCENTURE/INTERN", date: "Jan - April 2026" },
+];
+
+const PROJECTS_ROWS = [
+  { index: "01", title: "SMARTBIN3 (THESIS)", status: "COMPLETED" },
+  { index: "02", title: "PIC-BASED FUTSAL SCOREBOARD", status: "COMPLETED" },
+  { index: "01", title: "PERSONA5-THEMED PORTFOLIO", status: "IN PROGRESS" },
+];
+
+const SKILLS_ROWS = [
+  { index: "01", title: "REACT", level: "AMATEUR" },
+  { index: "02", title: "JAVASCRIPT", level: "AMATEUR" },
+  { index: "03", title: "CSS", level: "AMATEUR" },
+  { index: "04", title: "HTML", level: "AMATEUR" },
+  { index: "05", title: "FIREBASE", level: "AMATEUR" },
+  { index: "06", title: "SALESFORCE", level: "PROFICIENT" },
+];
+
+const CERTIFICATES_ROWS = [
+  { index: "01", title: "UNDERSTANDING THE INTERNET", link: "link", url: "https://www.futurelearn.com/certificates/irb42f3" },
+  { index: "02", title: "INTRODUCTION TO ANDROID STUDIO COURSE", link: "link", url: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIyMzEyIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvNzg5ODM2MV84MjE1NjEyMTczOTQwMDIwNjMxOS5wbmciLCJ1c2VybmFtZSI6IlBhb2xvIEphbnNlbiBBLiBFbnJlcmEifQ%3D%3D&referrer=https%3A%2F%2Flms.simplilearn.com%2Fdashboard%2Fcertificate&%24web_only=true" },
+  { index: "03", title: "GETTING STARTED WITH MACHINE LEARNING ALGORITHMS", link: "link", url: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzUxIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvNzg5ODU0N184MjE1NjEyMTczOTUwMTI0NzQ2MC5wbmciLCJ1c2VybmFtZSI6IlBhb2xvIEphbnNlbiBBLiBFbnJlcmEifQ%3D%3D&referrer=https%3A%2F%2Flms.simplilearn.com%2Fdashboard%2Fcertificate&%24web_only=true" },
 ];
 
 export default function ResumePage() {
@@ -88,7 +109,7 @@ export default function ResumePage() {
           position: absolute;
           top: 9vh;
           left: 2.8vw;
-          width: min(52vw, 820px);
+          width: min(50vw, 920px);
           display: flex;
           flex-direction: column;
           gap: 6px;
@@ -188,7 +209,7 @@ export default function ResumePage() {
 
         .resume-title {
           font-family: 'Persona5Main';
-          font-size: 56px;
+          font-size: 52px;
           line-height: 0.9;
           letter-spacing: 1px;
           color: #ffffff;
@@ -258,8 +279,8 @@ export default function ResumePage() {
           position: absolute;
           top: 9.5vh;
           right: 3vw;
-          width: min(44vw, 680px);
-          min-height: 74vh;
+          width: min(44vw, 810px);
+          min-height: 75vh;
           z-index: 12;
           padding: 22px 24px 24px 24px;
           background: linear-gradient(180deg, rgba(13,13,13,0.96) 0%, rgba(13,13,13,0.97) 100%);
@@ -343,7 +364,37 @@ export default function ResumePage() {
           line-height: 1;
           color: #ffffff;
         }
+        .resume-detail-date {
+          font-family: 'Bebas Neue';
+          font-size: 22px;
+          line-height: 1;
+          letter-spacing: 1.1px;
+          color: #0d0d0d;
+          background: #ffffff;
+          padding: 7px 12px;
+          clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+        }
         .resume-detail-status {
+          font-family: 'Bebas Neue';
+          font-size: 22px;
+          line-height: 1;
+          letter-spacing: 1.1px;
+          color: #0d0d0d;
+          background: #ffffff;
+          padding: 7px 12px;
+          clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+        }
+        .resume-detail-level {
+          font-family: 'Bebas Neue';
+          font-size: 22px;
+          line-height: 1;
+          letter-spacing: 1.1px;
+          color: #0d0d0d;
+          background: #ffffff;
+          padding: 7px 12px;
+          clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+        }
+        .resume-detail-link {
           font-family: 'Bebas Neue';
           font-size: 22px;
           line-height: 1;
@@ -419,13 +470,34 @@ export default function ResumePage() {
         {active === 0 && (
           <div className="resume-detail-panel">
             <div className="resume-detail-top">
-              <div className="resume-detail-top-index">01</div>
-              <div className="resume-detail-top-title">EDUCATION LOG</div>
-              <div className="resume-detail-top-progress">4/4</div>
+              <div className="resume-detail-top-index">1</div>
+              <div className="resume-detail-top-title">PROFESSIONAL EXPERIENCE</div>
+              <div className="resume-detail-top-progress">1/1</div>
             </div>
 
             <div className="resume-detail-list">
-              {EDUCATION_ROWS.map((row) => (
+              {EXPERIENCE_ROWS.map((row) => (
+                <div className="resume-detail-row" key={row.index}>
+                  <div className="resume-detail-row-index">{row.index}</div>
+                  <div className="resume-detail-row-title">{row.title}</div>
+                  <div className="resume-detail-date">{row.date}</div>
+                </div>
+              ))}
+            </div>
+
+            
+          </div>
+        )}
+
+        {active === 1 && (
+          <div className="resume-detail-panel">
+            <div className="resume-detail-top">
+              <div className="resume-detail-top-index">2</div>
+              <div className="resume-detail-top-title">PROJECTS</div>
+              <div className="resume-detail-top-progress">X/X</div>
+            </div>
+            <div className="resume-detail-list">
+              {PROJECTS_ROWS.map((row) => (
                 <div className="resume-detail-row" key={row.index}>
                   <div className="resume-detail-row-index">{row.index}</div>
                   <div className="resume-detail-row-title">{row.title}</div>
@@ -433,17 +505,46 @@ export default function ResumePage() {
                 </div>
               ))}
             </div>
+          </div>
+)}
 
-            <div className="resume-detail-bottom">
-              <div className="resume-detail-bottom-title">DETAILS</div>
-              <div className="resume-detail-bullets">
-                <div className="resume-detail-bullet">- Born to backend.</div>
-                <div className="resume-detail-bullet">- Focus: Java and Javascript.</div>
-              </div>
+        {active === 2 && (
+          <div className="resume-detail-panel">
+            <div className="resume-detail-top">
+              <div className="resume-detail-top-index">3</div>
+              <div className="resume-detail-top-title">SKILLS</div>
+              <div className="resume-detail-top-progress">X/X</div>
+            </div>
+            <div className="resume-detail-list">
+              {SKILLS_ROWS.map((row) => (
+                <div className="resume-detail-row" key={row.index}>
+                  <div className="resume-detail-row-index">{row.index}</div>
+                  <div className="resume-detail-row-title">{row.title}</div>
+                  <div className="resume-detail-level">{row.level}</div>
+                </div>
+              ))}
             </div>
           </div>
-        )}
+)}
 
+        {active === 3 && (
+          <div className="resume-detail-panel">
+            <div className="resume-detail-top">
+              <div className="resume-detail-top-index">4</div>
+              <div className="resume-detail-top-title">CERTIFICATES</div>
+              <div className="resume-detail-top-progress">X/X</div>
+            </div>
+            <div className="resume-detail-list">
+              {CERTIFICATES_ROWS.map((row) => (
+                <div className="resume-detail-row" key={row.index}>
+                  <div className="resume-detail-row-index">{row.index}</div>
+                  <div className="resume-detail-row-title">{row.title}</div>
+                  <div className="resume-detail-link">{row.link}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+)}
       </div>
     </div>
   );
