@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "persona5-website-theme"
-  }
+    "default": "persona5-website-theme",
+    "persona5": "persona5-website-theme"
+  },
+  "targets": {},
+  "etags": {}
 }

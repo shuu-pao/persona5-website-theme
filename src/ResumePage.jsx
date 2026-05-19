@@ -129,7 +129,7 @@ export default function ResumePage() {
 
         .resume-card {
           position: relative;
-          height: 112px;
+          height: 138px;
           background: #0d0d0d;
           clip-path: polygon(0 0, 97% 0, 100% 100%, 3% 100%);
           box-shadow: 0 8px 0 rgba(13,13,13,0.85);
@@ -145,7 +145,7 @@ export default function ResumePage() {
         .resume-card-inner {
           position: absolute;
           inset: 0;
-          padding: 14px 22px 14px 62px;
+          padding: 18px 28px 18px 72px;
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
@@ -154,10 +154,10 @@ export default function ResumePage() {
 
         .resume-badge {
           position: absolute;
-          top: 10px;
-          left: -10px;
-          width: 56px;
-          height: 70px;
+          top: 8px;
+          left: -12px;
+          width: 72px;
+          height: 92px;
           background: #0d0d0d;
           border: 3px solid #ffffff;
           clip-path: polygon(14% 0, 100% 0, 84% 100%, 0 100%);
@@ -170,7 +170,7 @@ export default function ResumePage() {
         }
         .resume-badge-text {
           font-family: 'Persona5Main';
-          font-size: 36px;
+          font-size: 42px;
           color: #ffffff;
           letter-spacing: 1px;
           transform: rotate(8deg);
@@ -197,22 +197,22 @@ export default function ResumePage() {
 
         .resume-rank {
           display: flex;
-          align-items: center;
-          gap: 10px;
+          align-items: flex-end;
+          gap: 8px;
           margin-top: 2px;
           flex-shrink: 0;
         }
         .resume-rank-label {
           font-family: 'Persona5Main';
-          font-size: 30px;
+          font-size: 26px;
           letter-spacing: 2px;
           color: #ffffff;
           transition: color 0.22s ease;
         }
         .resume-rank-number {
           font-family: 'Persona5Main';
-          font-size: 50px;
-          line-height: 0.82;
+          font-size: 42px;
+          line-height: 0.9;
           color: #ffffff;
           transition: color 0.22s ease;
         }
