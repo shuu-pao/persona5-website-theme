@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import mainImage from "./assets/main1.jpeg";
 
 const ITEMS = [
-  { id: "i", badge: "I", title: "EDUCATION", subtitle: "University of San Carlos / Computer Engineering", rank: 10 },
-  { id: "ii", badge: "II", title: "SKILLS", subtitle: "React / JavaScript / CSS / HTML / Firebase", rank: 1 },
-  { id: "iii", badge: "III", title: "PROJECTS", subtitle: "Persona5 Theme / React Apps / Firebase Hosting", rank: 1 },
-  { id: "iv", badge: "IV", title: "FOCUS", subtitle: "Frontend Development / Deployment Workflow", rank: 1 },
+  { id: "i", badge: "1", title: "EDUCATION", subtitle: "University of San Carlos / Computer Engineering", rank: 10 },
+  { id: "ii", badge: "2", title: "SKILLS", subtitle: "React / JavaScript / CSS / HTML / Firebase", rank: 1 },
+  { id: "iii", badge: "3", title: "PROJECTS", subtitle: "Persona5 Theme / React Apps / Firebase Hosting", rank: 1 },
+  { id: "iv", badge: "4", title: "FOCUS", subtitle: "Frontend Development / Deployment Workflow", rank: 1 },
 ];
 
 const EDUCATION_ROWS = [
@@ -91,9 +91,9 @@ export default function ResumePage() {
           width: min(52vw, 820px);
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 6px;
           pointer-events: none;
-          transform: scale(0.9);
+          transform: scale(1);
           transform-origin: top left;
         }
 
@@ -154,10 +154,10 @@ export default function ResumePage() {
 
         .resume-badge {
           position: absolute;
-          top: 8px;
-          left: -12px;
-          width: 72px;
-          height: 92px;
+          top: 4px;
+          left: -14px;
+          width: 78px;
+          height: 96px;
           background: #0d0d0d;
           border: 3px solid #ffffff;
           clip-path: polygon(14% 0, 100% 0, 84% 100%, 0 100%);
@@ -171,8 +171,11 @@ export default function ResumePage() {
         .resume-badge-text {
           font-family: 'Persona5Main';
           font-size: 42px;
+          width: 100%;
+          text-align: center;
           color: #ffffff;
-          letter-spacing: 1px;
+          letter-spacing: -0.4em;
+          line-height: 1;
           transform: rotate(8deg);
         }
         .resume-card-wrap.active .resume-badge {
@@ -213,6 +216,7 @@ export default function ResumePage() {
           font-family: 'Persona5Main';
           font-size: 42px;
           line-height: 0.9;
+          letter-spacing: -0.05em;
           color: #ffffff;
           transition: color 0.22s ease;
         }
